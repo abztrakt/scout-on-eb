@@ -31,12 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django.contrib.admin',
-    'django.contrib.auth',
+    # 'django.contrib.admin',
+    # 'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'scout',
+    'spotseeker_restclient',
+    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,6 +51,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django_mobileesp.middleware.UserAgentDetectionMiddleware',
 )
 
 ROOT_URLCONF = 'scout_eb_proj.urls'
@@ -63,6 +67,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'scout.context_processors.google_maps',
+                'scout.context_processors.google_analytics',
+                'scout.context_processors.is_desktop',
+                'scout.context_processors.is_hybrid',
             ],
         },
     },
@@ -100,3 +108,47 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Project settings
+CAMPUS_URL_LIST = ['seattle', 'tacoma', 'bothell']
+
+from django_mobileesp.detector import mobileesp_agent as agent
+DETECT_USER_AGENTS = {
+
+    'is_tablet' : agent.detectTierTablet,
+    'is_mobile': agent.detectMobileQuick,
+
+    'is_and': agent.detectAndroid,
+    'is_ios': agent.detectIos,
+    'is_win': agent.detectWindowsPhone,
+}
+
+COMPRESS_ROOT = "/tmp/"
+COMPRESS_PRECOMPILERS = (
+    ('text/less', 'lessc {infile} {outfile}'),
+    ('text/x-sass', 'pyscss {infile} > {outfile}'),
+    ('text/x-scss', 'pyscss {infile} > {outfile}'),
+)
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = False
+COMPRESS_OUTPUT_DIR = ''
+COMPRESS_CSS_FILTERS = [
+    'compressor.filters.css_default.CssAbsoluteFilter',
+    'compressor.filters.cssmin.CSSMinFilter'
+]
+COMPRESS_JS_FILTERS = [
+    'compressor.filters.jsmin.JSMinFilter',
+]
+
+GOOGLE_MAPS_API = ''
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+SPOTSEEKER_HOST = ''
+SPOTSEEKER_OAUTH_KEY = ''
+SPOTSEEKER_OAUTH_SECRET = ''
+SPOTSEEKER_DAO_CLASS = 'spotseeker_restclient.dao_implementation.spotseeker.File'
