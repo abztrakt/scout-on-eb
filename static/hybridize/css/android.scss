@@ -1,0 +1,81 @@
+
+/*** framework7 overrides ***/
+
+.item-media {
+
+    img { border-radius: 100%; }
+}
+
+
+.list-block { margin: 0;
+
+	ul:before { height: 0; }
+
+	ul {
+		li { }
+	}
+
+    .list-block-label { clear: both; word-wrap: break-word; color: #696969;
+
+        i { color:#333; margin-right: 8px; }
+    }
+
+    .item-inner { overflow: hidden;
+
+        .item-title {
+            span { color: #666; font-size: 80%; display: block; overflow: hidden; text-overflow: ellipsis; }
+        }
+
+    }
+
+}
+
+
+.button .ripple-wave {
+    //background-color: #ffcc33; //gold
+}
+
+
+/*** scout android styles  ***/
+
+body { font-family: 'Roboto', sans-serif; }
+
+.scout-list {
+
+    a {
+        .scout-spot-image {
+            background-color: #e5e6e9;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover !important;
+            width:80px;
+            height:80px;
+        }
+    }
+
+}
+
+.scout-detail-image {
+    background-color: #e5e6e9;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+// helpers
+
+.visually-hidden {
+    position: absolute!important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+    padding: 0!important;
+    border: 0!important;
+    height: 1px!important;
+    width: 1px!important;
+    overflow: hidden;
+}
+
+// colors
+
+.scout-green { color: #408325; }
+.scout-red { color:#a94441; }

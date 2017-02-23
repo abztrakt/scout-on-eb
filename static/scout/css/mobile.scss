@@ -1,0 +1,122 @@
+/***
+Mobile styles not needed in the critical loading. These are mostly the below the
+fold styles and general helpers.
+***/
+
+// sass variables
+
+$scout-purple: #6564A8;
+$scout-blue: #25738f;
+$scout-link: #25738f;
+$footer-height: 40px;
+
+// temporary classes (delete)
+
+.dummy {
+    color: #bdc3c7 !important;
+    * { color: #bdc3c7 !important; }
+}
+
+.scope {
+    color: #e74c3c !important;
+    * { color: #e74c3c !important; }
+}
+
+// scrolling body
+
+.scout-scroll {
+
+    .scout-content {
+
+        // details
+        .scout-details-container {
+
+            .scout-spot-meta { }
+
+            .scout-spot-notes { color: #767676; font-size: 14px; line-height: 20px; }
+
+            .scout-spot-contact-info { }
+
+            .scout-spot-content {
+
+                // spot details
+                .scout-spot-location { margin-bottom: 20px; }
+
+                .scout-spot-description { margin-bottom: 20px; color: #333; font-size: 14px; line-height: 20px; }
+
+                .scout-spot-hours { margin-bottom: 20px; color: #333; font-size: 14px;
+
+                    ul { margin: 0; padding: 0;
+                        li { list-style: none; white-space: nowrap; color: #666; line-height: 20px; margin-bottom: 8px;
+
+                            span { display: inline-block;
+                                &.day { width: 35%; text-transform: capitalize; color: #222; vertical-align: top;}
+                                &.closed { color: #a94442; text-transform: uppercase; font-size: 12px; letter-spacing: 1px; }
+                                &.day-hours { width: 65%; white-space: normal; }
+                            }
+                        }
+                    }
+                    span { display: inline-block; }
+                }
+
+                .scout-spot-building-info { color: #333; font-size: 14px; line-height: 20px; }
+
+                .scout-spot-map { height:200px; margin-bottom: 10px; }
+                .scout-spot-map-link { margin-bottom: 15px; font-size: 14px;
+
+                    a { display: block; text-decoration: none; line-height: 30px;
+
+                        .fa-stack { font-size: 12px; }
+                        .fa-circle { color: $scout-blue; }
+
+                        .scout-map-action-text { color: $scout-link; text-decoration: underline; }
+
+                    }
+
+                }
+
+                .scout-spot-reservation { margin-bottom: 20px; color: #333; font-size: 14px; line-height: 16px; }
+
+                .scout-spot-payment { margin-bottom: 20px; color: #333; font-size: 14px;
+
+                    ul { margin: 0; padding: 0;
+                        li { list-style: none; line-height: 20px; }
+                    }
+                    span { margin-right: 10px; }
+                }
+
+                .scout-spot-coupon { color: #333; font-size: 14px; line-height: 16px;
+
+                    .scout-spot-coupon-expire { margin: 10px 0;
+                        span { color: #767676; }
+                    }
+                    a { display: block; text-decoration: none; line-height: 30px;
+
+                        .fa-stack { font-size: 12px; }
+                        .fa-circle { color: $scout-blue; }
+
+                        .scout-coupon-action-text { color: $scout-link; text-decoration: underline; }
+
+                    }
+
+                }
+
+            }
+        }
+
+    }
+
+}
+
+// no result text
+.steps-list li {list-style:disc; margin-left:30px;}
+.steps-list-item {padding-bottom:10px;}
+
+// google maps
+
+.map-label { background: none; color: #f9f9f9; /*cursor: default !important;*/
+    .marker-text { color: #000; margin-left: 8px; text-shadow: 0 0 2px #fff, 0 0 2px #fff; font-weight: bold; display: inline-block; white-space: nowrap;}
+    .fa-cutlery:before { margin-left: 1.8px; }
+}
+
+.cluster div { color: #fff !important; font-weight: normal !important; }
