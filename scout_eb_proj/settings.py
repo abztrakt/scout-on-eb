@@ -124,7 +124,7 @@ DETECT_USER_AGENTS = {
     'is_win': agent.detectWindowsPhone,
 }
 
-COMPRESS_ROOT = "/tmp/"
+COMPRESS_ROOT = "static"
 COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),
     ('text/x-sass', 'pyscss {infile} > {outfile}'),
