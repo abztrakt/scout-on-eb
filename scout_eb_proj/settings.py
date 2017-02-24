@@ -141,7 +141,7 @@ COMPRESS_JS_FILTERS = [
     'compressor.filters.jsmin.JSMinFilter',
 ]
 
-GOOGLE_MAPS_API = ''
+GOOGLE_MAPS_API = os.environ.get('SCOUT_GMAPS_API_KEY', '')
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
