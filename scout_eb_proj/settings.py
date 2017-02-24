@@ -149,7 +149,7 @@ STATICFILES_FINDERS = (
     'compressor.finders.CompressorFinder',
 )
 
-SPOTSEEKER_HOST = ''
-SPOTSEEKER_OAUTH_KEY = ''
-SPOTSEEKER_OAUTH_SECRET = ''
-SPOTSEEKER_DAO_CLASS = 'spotseeker_restclient.dao_implementation.spotseeker.File'
+SPOTSEEKER_HOST = os.environ.get('SCOUT_SPOTSEEKER_SERVER_URL', '')
+SPOTSEEKER_OAUTH_KEY = os.environ.get('SCOUT_SERVER_OAUTH_KEY', '')
+SPOTSEEKER_OAUTH_SECRET = os.environ.get('SCOUT_SERVER_OAUTH_SECRET', '')
+SPOTSEEKER_DAO_CLASS = 'spotseeker_restclient.dao_implementation.spotseeker.Live'
