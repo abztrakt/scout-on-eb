@@ -1,2 +1,3 @@
 awsebcli
+-e git+git@github.com:uw-it-aca/axdd-aws.git#egg=awslogin
 -r requirements.txt
